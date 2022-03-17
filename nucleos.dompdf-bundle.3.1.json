@@ -1,0 +1,29 @@
+{
+    "manifests": {
+        "nucleos/dompdf-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Nucleos\\DompdfBundle\\NucleosDompdfBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/nucleos_dompdf.yaml": {
+                    "contents": [
+                        "nucleos_dompdf:",
+                        "    defaults:",
+                        "        chroot: '%kernel.project_dir%/public/assets' # See https://github.com/dompdf/dompdf/wiki/Usage#security-restrictions-for-local-files",
+                        "        logOutputFile: '/dev/null' # Prevent creating `/tmp/log.htm` which causes problems in some server configurations",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "8d8c84357cf3faf692a26c10834355cb89647718"
+        }
+    }
+}
